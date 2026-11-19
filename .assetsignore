@@ -1,0 +1,56 @@
+# .assetsignore for the freedom-tracker-website Worker (same syntax as .gitignore).
+# Wrangler does NOT upload matching files, so they can never be served publicly.
+# Today /.git/*, /.gitignore and /wrangler.jsonc return HTTP 200 on myfreedomtracker.com.
+
+# 1) Every dotfile and dot-directory, at any depth (.git/, .gitignore, .env*, .dev.vars,
+#    .wrangler/, .vscode/, .DS_Store, this file itself).
+.*
+**/.*
+# If a public /.well-known/ file is ever needed (security.txt, domain verification),
+# re-include it explicitly:
+# !.well-known/
+# !.well-known/**
+
+# 2) Explicit names (redundant with the dot rules, kept so a reviewer can see them).
+.git/
+.gitignore
+.assetsignore
+.env
+.env.*
+.dev.vars
+.dev.vars.*
+.wrangler/
+
+# 3) Worker / build / package configuration
+wrangler.json
+wrangler.jsonc
+wrangler.toml
+package.json
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
+bun.lockb
+tsconfig.json
+jsconfig.json
+node_modules/
+src/
+dist/
+build/
+
+# 4) Local scripts, notes and secrets-adjacent files that must never ship
+*.ps1
+*.bat
+*.cmd
+*.sh
+*.py
+*.md
+*.log
+*.pem
+*.key
+*.p12
+*.pfx
+*.cer
+*.bak
+*.tmp
+*.zip
+*.map

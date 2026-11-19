@@ -1,13 +1,23 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "freedom-tracker-website",
+  "main": "src/worker.js",
   "compatibility_date": "2026-06-20",
   "observability": {
     "enabled": true
   },
   "assets": {
-    "directory": "."
+    "directory": ".",
+    "binding": "ASSETS",
+    // Run the Worker first only for /buy. Every other file is served
+    // exactly as today, without invoking the Worker.
+    "run_worker_first": ["/buy", "/buy/"]
   },
+  // Privacy-safe /buy click counts (event + sanitized utm only; no IP, no user agent).
+  // Analytics Engine is used instead of Workers Logs so we store only the fields we write.
+  "analytics_engine_datasets": [
+    { "binding": "FT_EVENTS", "dataset": "ft_site_events" }
+  ],
   "compatibility_flags": [
     "nodejs_compat"
   ]
