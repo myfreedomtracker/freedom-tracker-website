@@ -676,9 +676,9 @@ Try the free web Playground first →
 </div>
 <p style="font-size:0.8rem;color:var(--muted);margin-top:8px;">
 <a id="hero-store-link" href="https://apps.microsoft.com/detail/9P0LT7C59MH8" target="_blank" rel="noopener" style="color:var(--muted);text-decoration:underline;text-underline-offset:3px;">Get it on the Microsoft Store</a>
-&nbsp;·&nbsp;
+<span id="hero-sep-1">&nbsp;·&nbsp;</span>
 <a id="hero-exe-link" href="https://github.com/williammcdanieliv-art/freedom-tracker-website/releases/download/v7.9.1/FreedomTracker-7.9.1-Setup.exe" style="color:var(--muted);text-decoration:underline;text-underline-offset:3px;">Prefer a direct installer? Get the .exe</a>
-&nbsp;·&nbsp;
+<span id="hero-sep-2">&nbsp;·&nbsp;</span>
 <a id="hero-alt-link" href="https://github.com/williammcdanieliv-art/freedom-tracker-website/releases/download/v7.9.1/FreedomTracker-7.9.1-Mac.dmg" style="color:var(--muted);text-decoration:underline;text-underline-offset:3px;">Also available for macOS (.dmg)</a>
 </p>
 <!-- v91c H12 (NEW) -->
@@ -1195,6 +1195,8 @@ document.querySelectorAll('.os-dl').forEach(function(btn) { btn.href = primaryUr
 var storeLink = document.getElementById('hero-store-link');
 var exeLink   = document.getElementById('hero-exe-link');
 var altLink   = document.getElementById('hero-alt-link');
+var sep1 = document.getElementById('hero-sep-1');
+var sep2 = document.getElementById('hero-sep-2');
 if (exeLink) { exeLink.href = winExe; }
 
 if (isMac) {
@@ -1203,11 +1205,14 @@ var heroBtn = document.getElementById('hero-download-btn');
 if (heroBtn) { heroBtn.textContent = 'Download for Mac — Free Trial'; }
 if (storeLink) { storeLink.style.display = 'none'; }
 if (exeLink) { exeLink.style.display = 'none'; }
+if (sep1) { sep1.style.display = 'none'; }
+if (sep2) { sep2.style.display = 'none'; }
 if (altLink) { altLink.href = winStore; altLink.textContent = 'Also available for Windows (Microsoft Store)'; }
 } else {
 // Windows visitor: primary buttons already point to the Store, so hide the redundant
 // secondary Store link and keep the .exe direct-installer + macOS links.
 if (storeLink) { storeLink.style.display = 'none'; }
+if (sep1) { sep1.style.display = 'none'; }
 }
 })();
 </script>
