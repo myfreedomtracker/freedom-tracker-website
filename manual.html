@@ -242,6 +242,15 @@
       .page-header h1 { font-size: 1.8rem; }
       .concept-grid { grid-template-columns: 1fr; }
     }
+    /* v91c: small-screen nav fit (CSS only) */
+    @media (max-width: 480px) {
+    nav { padding: 0 4%; gap: 8px; }
+    nav .nav-logo { font-size: 1rem; }
+    nav .nav-ctas .btn-ghost { display: none; }
+    nav .nav-ctas .btn { padding: 8px 14px; font-size: 0.82rem; }
+    .footer-links { flex-wrap: wrap; row-gap: 10px; }
+    code { overflow-wrap: anywhere; }
+    }
   </style>
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
@@ -307,7 +316,7 @@
     <section class="section">
       <span class="section-anchor" id="install"></span>
       <h2><span class="icon">💿</span> 1. Installation</h2>
-      <div class="section-desc">Download once — no account, no internet connection required to run.</div>
+      <div class="section-desc">Download once — no account to create. You'll need an internet connection to activate a license and to fetch prices.</div>
 
       <h3>Windows</h3>
       <div class="steps">
@@ -342,6 +351,7 @@
       </div>
 
       <h3>Mac</h3>
+      <p><strong>Mac requirement:</strong> Apple Silicon Mac, macOS 11 or later. Intel Macs aren't supported.</p>
       <div class="steps">
         <div class="step">
           <div class="step-num">1</div>
@@ -386,7 +396,7 @@
       <p>On first launch, a sample portfolio loads so you can see what a live dividend portfolio looks like. Feel free to explore, or clear it with the <strong>🧹 Clear All</strong> button and start fresh with your own holdings.</p>
 
       <div class="callout callout-tip">
-        <span class="callout-icon">💡</span> <strong>Tip:</strong> Press <strong>F5</strong> (or Ctrl+R) at any time to refresh live prices from Yahoo Finance. The app needs internet access only for price updates — your portfolio data lives entirely on your computer.
+        <span class="callout-icon">💡</span> <strong>Tip:</strong> Press <strong>F5</strong> (or Ctrl+R) at any time to refresh live prices from Yahoo Finance. The app needs an internet connection to fetch prices and to check your license. Your portfolio data stays on your computer, and there's no brokerage login.
       </div>
     </section>
 
@@ -792,7 +802,7 @@
           <div class="step-num">3</div>
           <div class="step-body">
             <strong>Enter your key and click Activate</strong>
-            <p>Paste the license key from your email. The app verifies it and unlocks immediately — no internet required after activation. Your license is a one-time purchase and never expires — it's yours for life.</p>
+            <p>Paste the license key from your email. The app verifies it and unlocks immediately. The app goes online for live prices and to check your license. Your license is a one-time purchase and never expires — it's yours for life.</p>
           </div>
         </div>
         <div class="step">
