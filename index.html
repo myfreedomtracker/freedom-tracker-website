@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>MyFreedomTracker • Plan Your Path to Financial Freedom</title>
-<meta name="description" content="Plan your path to financial freedom. The offline income-planning suite for dividend investors — model any portfolio (Playground), project any contribution plan (Builder), and budget it all (Budget) across endless scenarios. Pay once, $49 lifetime. Try free for 7 days. Windows & Mac." />
+<meta name="description" content="Plan your path to financial freedom. A pay-once, $49 desktop suite for income investors — Playground, Builder, and Budget. 7-day free trial, no credit card. Your portfolio data stays on your computer, and there's no brokerage login. Windows 10 and 11, and Apple Silicon Mac, macOS 11 or later. Built by a 20-year U.S. Air Force veteran." />
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -614,11 +614,21 @@ nav { padding: 0 4%; }
 section { padding: 64px 5%; }
 .hero { padding: 60px 5% 50px; }
 }
+/* v91c: small-screen nav fit (CSS only) */
+@media (max-width: 480px) {
+nav { padding: 0 4%; gap: 8px; }
+nav .nav-logo { font-size: 1rem; }
+nav .nav-ctas .btn-ghost { display: none; }
+nav .nav-ctas .btn { padding: 8px 14px; font-size: 0.82rem; }
+.footer-links { flex-wrap: wrap; row-gap: 10px; }
+code { overflow-wrap: anywhere; }
+}
 </style>
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<script>(function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[]).push(arguments);},l=d.createElement(e),l.async=1,l.src=u,n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})(window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');ml('account', '2469310');</script>
 </head>
 <body>
 
@@ -645,32 +655,39 @@ section { padding: 64px 5%; }
 <section class="hero">
 <div class="trial-badge">
 <span class="dot"></span>
-Free 7-Day Trial — No Credit Card Required
+Pay once. Not a subscription.
 </div>
 <h1>
-Don't just track your dividends.<br />
-<span class="highlight">Plan your freedom.</span>
+See what your portfolio <span class="highlight">pays you each month.</span>
 </h1>
+<p class="hero-sub" style="color:var(--text);font-weight:600;margin-bottom:12px;">
+Hope starts when you can see the plan.
+</p>
 <p class="hero-sub">
-The offline desktop app for income investors — with three planning tools that work together: the <strong style="color:var(--text)">Playground</strong>, the <strong style="color:var(--text)">Builder</strong>, and the <strong style="color:var(--text)">Budget</strong>. Model any portfolio, project any contribution plan, and budget it all — across endless scenarios you can fine-tune to the dollar.
+Freedom Tracker shows what your holdings pay each month, how much of your bills that covers, and a plan for the gap — with the <strong style="color:var(--text)">Playground</strong>, <strong style="color:var(--text)">Builder</strong>, and <strong style="color:var(--text)">Budget</strong>. $49 once, with a 7-day free trial and no credit card.
 </p>
 <div class="hero-ctas">
 <a class="btn btn-primary btn-lg os-dl" id="hero-download-btn" href="https://apps.microsoft.com/detail/9P0LT7C59MH8">
 Start Free Trial — 7 Days
 </a>
-<a class="btn btn-outline btn-lg" href="#playground">
-See Playground ↓
+<a class="btn btn-outline btn-lg" href="/playground/">
+Try the free web Playground first →
 </a>
 </div>
 <p style="font-size:0.8rem;color:var(--muted);margin-top:8px;">
 <a id="hero-store-link" href="https://apps.microsoft.com/detail/9P0LT7C59MH8" target="_blank" rel="noopener" style="color:var(--muted);text-decoration:underline;text-underline-offset:3px;">Get it on the Microsoft Store</a>
-&nbsp;·&nbsp;
-<a id="hero-exe-link" href="https://github.com/williammcdanieliv-art/freedom-tracker-website/releases/download/v7.9.1/FreedomTracker-7.9.1-Setup.exe" style="color:var(--muted);text-decoration:underline;text-underline-offset:3px;">Prefer a direct installer? Get the .exe</a>
-&nbsp;·&nbsp;
-<a id="hero-alt-link" href="https://github.com/williammcdanieliv-art/freedom-tracker-website/releases/download/v7.9.1/FreedomTracker-7.9.1-Mac.dmg" style="color:var(--muted);text-decoration:underline;text-underline-offset:3px;">Also available for macOS (.dmg)</a>
+<span id="hero-sep-1">&nbsp;·&nbsp;</span>
+<a id="hero-exe-link" href="https://github.com/williammcdanieliv-art/freedom-tracker-website/releases/download/v7.9.4/FreedomTracker-7.9.4-Setup.exe" style="color:var(--muted);text-decoration:underline;text-underline-offset:3px;">Prefer a direct installer? Get the .exe</a>
+<span id="hero-sep-2">&nbsp;·&nbsp;</span>
+<a id="hero-alt-link" href="https://github.com/williammcdanieliv-art/freedom-tracker-website/releases/download/v7.9.4/FreedomTracker-7.9.4-Mac.dmg" style="color:var(--muted);text-decoration:underline;text-underline-offset:3px;">Also available for macOS (.dmg)</a>
 </p>
+<!-- v91c H12 (NEW) -->
+<p style="font-size:0.9rem;margin-top:10px;"><a href="#worksheet" style="color:var(--gold);text-decoration:underline;text-underline-offset:3px;">Not ready to download? Get the free one-page Clear Picture Worksheet ↓</a></p>
 <p class="hero-fine">
-<strong>7 days free</strong>, then $49 once — yours forever &nbsp;·&nbsp; Windows &amp; Mac &nbsp;·&nbsp; We hate subscriptions too
+<strong>7 days free</strong>, then $49 once — yours forever &nbsp;·&nbsp; Windows 10 and 11, and Apple Silicon Mac, macOS 11 or later &nbsp;·&nbsp; We hate subscriptions too
+</p>
+<p class="hero-fine" style="margin-top:6px;">
+Your portfolio data stays on your computer, and there's no brokerage login. Built by a 20-year U.S. Air Force veteran. Not financial advice.
 </p>
 <div class="platform-pills">
 <span class="platform-pill">
@@ -684,21 +701,46 @@ Windows 10 &amp; 11
 <path d="M12 2a5 5 0 0 1 5 5c0 2.4-1.5 4.5-3.5 5.4V14a1 1 0 0 1-1 1h-1a1 1 0 0 1-1-1v-1.6C8.5 11.5 7 9.4 7 7a5 5 0 0 1 5-5z"/>
 <path d="M9 22c0-1.7 1.3-3 3-3s3 1.3 3 3"/>
 </svg>
-macOS 12+
+Apple Silicon Mac, macOS 11 or later
 </span>
 <span class="platform-pill">
 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
 <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
 </svg>
-100% Local &amp; Private
+Data stays on your computer
 </span>
 </div>
 <div class="hero-img">
 <img
-src="https://myfreedomtracker.com/shot-dashboard.png"
-alt="MyFreedomTracker — portfolio snapshot with real dividend income and Freedom Score"
+src="dashboard_freedom_score_income_goal.png"
+alt="Freedom Tracker dashboard with a demo portfolio, monthly income goal, and Freedom Score"
 />
 <div class="img-glow"></div>
+</div>
+</section>
+
+
+<!-- HOW IT WORKS (v91c NEW: N1–N4) -->
+<section id="how-it-works">
+<div class="features-inner">
+<div class="features-header">
+<h2 class="section-headline">How it works</h2>
+</div>
+<div class="feat-grid" style="grid-template-columns:repeat(auto-fit,minmax(260px,1fr));">
+<div class="feat-card">
+<div class="feat-icon">1</div>
+<p>Add your holdings by hand or import a CSV from your broker.</p>
+</div>
+<div class="feat-card">
+<div class="feat-icon">2</div>
+<p>Set the monthly income you want.</p>
+</div>
+<div class="feat-card">
+<div class="feat-icon">3</div>
+<p>See what your portfolio pays, how much of your bills it covers, and your Freedom Score.</p>
+<img src="freedom_score_crop.png" width="260" height="72" alt="Freedom Score from a demo portfolio" style="display:block;max-width:100%;height:auto;margin-top:14px;border-radius:6px;" />
+</div>
+</div>
 </div>
 </section>
 
@@ -716,13 +758,13 @@ Freedom Tracker isn't one calculator — it's three planning tools built to work
 <div class="feat-card" style="border-color:rgba(245,200,66,0.25);">
 <div class="feat-icon">⭐</div>
 <h3>Playground</h3>
-<p>Drop in any allocation — <em style="color:var(--gold);font-style:normal">30% SCHD, 25% JEPI</em> — and instantly see the yearly, monthly, and weekly income it would pay at live distribution rates. The fastest way to answer “what would this actually pay me?”</p>
+<p>Drop in any allocation — <em style="color:var(--gold);font-style:normal">30% SCHD, 25% JEPI</em> — and instantly see the yearly, monthly, and weekly income it would pay. The desktop app uses live distribution rates; the free web Playground uses sample distribution rates, for illustration only. Funds shown are examples, not recommendations. The fastest way to answer “what would this actually pay me?”</p>
 <a href="#playground" style="color:var(--gold);font-size:0.85rem;text-decoration:none;font-weight:600;">Explore the Playground →</a><!-- pg-lite-cta --><div style="margin-top:14px;"><a href="/playground" style="display:inline-block;background:#1b4332;color:#ffffff;text-decoration:none;padding:12px 24px;border-radius:8px;font-weight:600;font-family:inherit;">▶ Try the free web Playground — no download →</a></div>
 </div>
 <div class="feat-card" style="border-color:rgba(245,200,66,0.25);">
 <div class="feat-icon">📈</div>
 <h3>Builder</h3>
-<p>Set a recurring contribution and a time horizon, and watch reinvested distributions compound into a projected future income. See exactly when you reach your number — and what it takes to get there sooner.</p>
+<p>Set a recurring contribution and a time horizon, and watch reinvested distributions compound into a projected future income. Project when you could reach your number, and what a change in contributions could do to the estimate.</p>
 <a href="#dreamer" style="color:var(--gold);font-size:0.85rem;text-decoration:none;font-weight:600;">Explore the Builder →</a>
 </div>
 <div class="feat-card" style="border-color:rgba(245,200,66,0.25);">
@@ -733,7 +775,7 @@ Freedom Tracker isn't one calculator — it's three planning tools built to work
 </div>
 </div>
 <p style="text-align:center;color:var(--muted);max-width:640px;margin:36px auto 0;font-size:0.95rem;line-height:1.7;">
-<strong style="color:var(--text)">Endless scenarios, zero limits.</strong> Save and name as many what-ifs as you like — a conservative plan, an aggressive one, a “what if I add $500 a month” one — and compare them side by side. Everything recalculates live, and it all runs 100% offline on your machine.
+<strong style="color:var(--text)">Endless scenarios, zero limits.</strong> Save and name as many what-ifs as you like — a conservative plan, an aggressive one, a “what if I add $500 a month” one — and compare them side by side. Everything recalculates live. Your portfolio data stays on your computer, and there's no brokerage login.
 </p>
 </div>
 </section>
@@ -748,7 +790,7 @@ Freedom Tracker isn't one calculator — it's three planning tools built to work
 Most investors guess at what their portfolio might produce. The Playground lets you <em style="color:var(--gold);font-style:normal;font-weight:600;">know</em>.
 </p>
 <p class="playground-hook">
-Type in any allocation — <em>30% SCHD, 25% JEPI, 20% JEPQ</em> — and instantly see the projected yearly, monthly, and weekly income that allocation produces based on live distribution rates. Watch your Freedom Score update in real time as you get closer to your goal.
+Type in any allocation — <em>30% SCHD, 25% JEPI, 20% JEPQ</em> — and instantly see the projected yearly, monthly, and weekly income that allocation produces. In the desktop app, projections use live distribution rates. Watch your Freedom Score update in real time as you get closer to your goal.
 <br /><br />
 It answers the question every income investor is really asking: <em>"How do I build the portfolio that sets me free?"</em>
 </p>
@@ -768,19 +810,19 @@ It answers the question every income investor is really asking: <em>"How do I bu
 <div class="pg-card">
 <div class="pg-card-icon">📊</div>
 <h3>Live Distribution Rates</h3>
-<p>Projections are based on actual current ETF and stock distribution rates — not historical averages or rough estimates. Real numbers, real income.</p>
+<p>In the desktop app, projections use live distribution rates — actual current ETF and stock rates, not historical averages or rough estimates. The free web Playground uses sample distribution rates, for illustration only.</p>
 </div>
 <div class="pg-card">
 <div class="pg-card-icon">🔒</div>
-<h3>Completely Offline</h3>
-<p>The Playground runs entirely on your machine. No account needed, no data leaves your computer. Your strategy stays yours.</p>
+<h3>No brokerage login</h3>
+<p>Your portfolio data stays on your computer, and there's no brokerage login. No account to create. Your strategy stays yours.</p>
 </div>
 </div>
 
 <div class="playground-screenshot">
 <img
-src="https://myfreedomtracker.com/shot-playground.png"
-alt="Playground — live hypothetical allocation table with projected income and Freedom Score"
+src="playground.png"
+alt="Playground — live hypothetical allocation table with projected income, demo portfolio"
 />
 <span class="playground-screenshot-badge">● Live Preview</span>
 </div>
@@ -835,7 +877,7 @@ It answers the next question every income builder is really asking: <em>"If I ke
 </div>
 
 <div class="playground-screenshot">
-<img src="https://myfreedomtracker.com/shot-dreamer.png" alt="Builder — contribution projection with future income" />
+<img src="builder_allocation.png" alt="Builder fund weights, demo portfolio" />
 <span class="playground-screenshot-badge">● Live Preview</span>
 </div>
 
@@ -845,7 +887,7 @@ Projections are estimates based on current and historical distribution data and 
 
 <div class="playground-cta">
 <p>Model your path to freedom — free for 7 days.</p>
-<span>No credit card. No account. 100% offline.</span>
+<span>No credit card. No account. Data stays on your computer.</span>
 <a class="btn btn-primary btn-lg os-dl" href="https://apps.microsoft.com/detail/9P0LT7C59MH8">
 Start Free Trial →
 </a>
@@ -888,18 +930,18 @@ It answers the question that ties everything together: <em>"When my plan plays o
 <div class="pg-card">
 <div class="pg-card-icon">🔒</div>
 <h3>Yours Alone</h3>
-<p>Your income, your bills, your plans — stored only on your machine. No cloud, no account, no one else's eyes on your finances.</p>
+<p>Your income, your bills, your plans — stored on your computer. Your portfolio data stays on your computer, and there's no brokerage login.</p>
 </div>
 </div>
 
 <div class="playground-screenshot">
-<img src="https://myfreedomtracker.com/shot-budget.png" alt="Budget — incomes, bills, and live net with projections folded in" />
+<img src="budget_income_vs_expenses.png" alt="Budget — incomes, bills, and live net with projections folded in, demo portfolio" />
 <span class="playground-screenshot-badge">● Live Preview</span>
 </div>
 
 <div class="playground-cta">
 <p>See your whole financial picture — free for 7 days.</p>
-<span>No credit card. No account. 100% offline.</span>
+<span>No credit card. No account. Data stays on your computer.</span>
 <a class="btn btn-primary btn-lg os-dl" href="https://apps.microsoft.com/detail/9P0LT7C59MH8">
 Start Free Trial →
 </a>
@@ -934,7 +976,7 @@ Start Free Trial →
 <div class="feat-card">
 <div class="feat-icon">📈</div>
 <h3>Builder <span style="font-size:0.7rem;color:var(--gold);font-weight:700;vertical-align:middle;">NEW</span></h3>
-<p>Project future income from recurring contributions. Reinvested distributions compound over your horizon — see when you reach your number.</p>
+<p>Project future income from recurring contributions. Reinvested distributions compound over your horizon. Project when you could reach your number, and what a change in contributions could do to the estimate.</p>
 </div>
 <div class="feat-card">
 <div class="feat-icon">📋</div>
@@ -953,8 +995,8 @@ Start Free Trial →
 </div>
 <div class="feat-card">
 <div class="feat-icon">🛡️</div>
-<h3>100% Local &amp; Private</h3>
-<p>All data lives on your computer in a simple file you own. No cloud. No syncing. No subscription creep. Your portfolio is yours.</p>
+<h3>Data stays on your computer</h3>
+<p>Your portfolio data stays on your computer, in a simple file you own, and there's no brokerage login. No syncing. No subscription creep. Your portfolio is yours.</p>
 </div>
 <div class="feat-card">
 <div class="feat-icon">📥</div>
@@ -969,7 +1011,7 @@ Start Free Trial →
 <div class="feat-card">
 <div class="feat-icon">🛟</div>
 <h3>Automatic Backups &amp; Restore</h3>
-<p>Freedom Tracker keeps rolling backups of your portfolio and restores any of them in one click — right inside the app. Your safety net, and it never leaves your machine.</p>
+<p>Freedom Tracker keeps rolling backups of your portfolio and restores any of them in one click — right inside the app. Your safety net stays on your computer.</p>
 </div>
 <div class="feat-card">
 <div class="feat-icon">🔖</div>
@@ -977,6 +1019,29 @@ Start Free Trial →
 <p>Name and save as many Playground allocations, Builder plans, and Budgets as you like — a conservative plan, an aggressive one — and switch between them in a click.</p>
 </div>
 </div>
+</div>
+</section>
+
+<!-- FOUNDER STORY (v91c MOVED) (site_copy_final_v1.md, Version 1) -->
+<section id="founder" style="background:var(--bg2);padding-top:56px;padding-bottom:56px;">
+<p style="max-width:720px;margin:0 auto;text-align:center;color:var(--muted);font-size:1rem;line-height:1.75;">
+<strong style="color:var(--text)">Built by a 20-year U.S. Air Force veteran.</strong> Bill McDaniel built Freedom Tracker after leaving the service, when he wanted a clear picture of whether his savings could cover the life he hoped to live. He served 20 years in the U.S. Air Force as a missile maintenance officer, a missile operations officer, and in space systems operations. The result is a pay-once desktop app that helps you see the plan. Your portfolio data stays on your computer, and there's no brokerage login. Not financial advice.
+</p>
+</section>
+
+<!-- WHAT $49 GETS YOU (v91c NEW: N5; bullets reused from approved lines) -->
+<section id="what-you-get">
+<div class="features-inner">
+<div class="features-header">
+<h2 class="section-headline">What $49 gets you</h2>
+</div>
+<ul class="pricing-features" style="max-width:640px;margin:0 auto;">
+<li><span class="check">✓</span> One-time payment · License key delivered instantly</li>
+<li><span class="check">✓</span> One license covers up to 3 computers.</li>
+<li><span class="check">✓</span> Windows 10 and 11, and Apple Silicon Mac, macOS 11 or later</li>
+<li><span class="check">✓</span> Your portfolio data stays on your computer, and there's no brokerage login.</li>
+<li><span class="check">✓</span> 7-day free trial. No credit card.</li>
+</ul>
 </div>
 </section>
 
@@ -1000,7 +1065,7 @@ Start Free Trial →
 <li><span class="check">✓</span> Full access to every feature</li>
 <li><span class="check">✓</span> Playground unlimited</li>
 <li><span class="check">✓</span> Real portfolio tracking</li>
-<li><span class="check">✓</span> Windows &amp; Mac</li>
+<li><span class="check">✓</span> Windows 10 and 11, and Apple Silicon Mac, macOS 11 or later</li>
 <li><span class="check">✓</span> No credit card required</li>
 </ul>
 <a class="btn btn-outline os-dl" style="display:block;text-align:center;padding:13px;" href="https://apps.microsoft.com/detail/9P0LT7C59MH8">
@@ -1011,7 +1076,7 @@ Start Free Trial
 
 <!-- Lifetime license card -->
 <div class="pricing-card featured">
-<div class="pricing-badge">Lifetime · Founder Price</div>
+<div class="pricing-badge">Lifetime</div>
 <div class="pricing-name">Pay Once</div>
 <div class="pricing-price"><sup>$</sup>49</div>
 <div class="pricing-period">one-time — yours forever · we hate subscriptions too</div>
@@ -1019,18 +1084,25 @@ Start Free Trial
 <li><span class="check">✓</span> Pay once, own it forever — no renewals, ever</li>
 <li><span class="check">✓</span> All three Freedom Features + every update to this version</li>
 <li><span class="check">✓</span> Automated DRIP &amp; Freedom Score</li>
-<li><span class="check">✓</span> Windows &amp; Mac desktop app</li>
-<li><span class="check">✓</span> 100% local — your data stays on your machine</li>
+<li><span class="check">✓</span> Windows 10 and 11, and Apple Silicon Mac, macOS 11 or later</li>
+<li><span class="check">✓</span> Your portfolio data stays on your computer, and there's no brokerage login.</li>
 <li><span class="check">✓</span> Priority support</li>
 </ul>
-<a class="btn btn-primary" style="display:block;text-align:center;padding:13px;" href="https://myfreedomtracker.lemonsqueezy.com/checkout/buy/b5c94c88-7001-4b82-ab40-a8d8d448f067">
+<a class="btn btn-primary" style="display:block;text-align:center;padding:13px;" href="/buy">
 Buy Lifetime — $49
 </a>
-<p class="pricing-note">One-time payment · License key delivered instantly · Founder price — going up later</p>
+<p class="pricing-note">One-time payment · License key delivered instantly</p>
+<p class="pricing-note">Military, veterans and first responders: use code THANKYOU10 at checkout on myfreedomtracker.com for 10% off. Website purchases only.</p>
 </div>
 
 </div>
 </div>
+</section>
+
+<!-- CLEAR PICTURE WORKSHEET (v91c MOVED; N7 NEW) -->
+<section id="worksheet">
+<p style="text-align:center;color:var(--text);font-weight:600;margin:0 auto 12px;">Not ready yet? Start with a free one-page worksheet.</p>
+<div class="ml-embedded" data-form="NRlBv9"></div>
 </section>
 
 <!-- FAQ -->
@@ -1058,12 +1130,16 @@ Buy Lifetime — $49
 <div class="faq-a">Really one-time. <strong>$49, paid once, yours forever</strong> — no subscription, no renewals, no auto-billing. We hate subscriptions too. Your purchase includes Freedom Tracker and every update to this version, free. (A future major version may be an optional paid upgrade — and your version always keeps working.)</div>
 </div>
 <div class="faq-item">
+<div class="faq-q">How many computers does one license cover?</div>
+<div class="faq-a">One license covers up to 3 computers. Your portfolio data stays on each computer; the app does not sync holdings between machines. To move a portfolio, export a CSV on one computer and import it on the other.</div>
+</div>
+<div class="faq-item">
 <div class="faq-q">Is my financial data stored in the cloud?</div>
-<div class="faq-a">Never. All portfolio data is stored <strong>locally on your computer</strong> in a simple file you own. Nothing leaves your machine. No servers, no syncing, no accounts.</div>
+<div class="faq-a">Your portfolio data stays on your computer, in a simple file you own, and there's no brokerage login. The app fetches prices and distribution rates when you're online, and it checks your license online. We don't sync your holdings to a cloud account.</div>
 </div>
 <div class="faq-item">
 <div class="faq-q">Does it work on Mac?</div>
-<div class="faq-a">Yes. Freedom Tracker runs on <strong>Windows 10 &amp; 11</strong> and <strong>macOS 12 (Monterey) and later</strong>. The Mac build is signed and notarized by Apple — download the <a href="https://github.com/williammcdanieliv-art/freedom-tracker-website/releases/download/v7.9.1/FreedomTracker-7.9.1-Mac.dmg" style="text-decoration:underline;text-underline-offset:3px;">Mac DMG here</a>.</div>
+<div class="faq-a">Yes. Freedom Tracker runs on <strong>Windows 10 and 11</strong>, and on <strong>Apple Silicon Mac, macOS 11 or later</strong>. Intel Macs aren't supported. The Mac build is signed and notarized by Apple — download the <a href="https://github.com/williammcdanieliv-art/freedom-tracker-website/releases/download/v7.9.4/FreedomTracker-7.9.4-Mac.dmg" style="text-decoration:underline;text-underline-offset:3px;">Mac DMG here</a>.</div>
 </div>
 <div class="faq-item">
 <div class="faq-q">What brokers can I import from?</div>
@@ -1073,17 +1149,22 @@ Buy Lifetime — $49
 <div class="faq-q">Is there a refund policy?</div>
 <div class="faq-a">Because we offer a full-featured 7-day free trial, we don't offer refunds on paid licenses. Use the trial to make sure it's right for you before purchasing.</div>
 </div>
+<div class="faq-item">
+<div class="faq-q">Is there a discount for military, veterans, or first responders?</div>
+<div class="faq-a">Yes. Use code THANKYOU10 at checkout on myfreedomtracker.com for 10% off. The code is for military, veterans, and first responders, and it applies to website purchases only.</div>
+</div>
 </div>
 </section>
 
 <!-- FINAL CTA -->
 <div class="final-cta">
-<h2>Start modeling your <span>financial freedom</span> today.</h2>
-<p>7-day free trial. No credit card. Windows &amp; Mac.</p>
+<h2>Start your free 7 days and <span>see your plan.</span></h2>
+<p>7-day free trial. No credit card. Windows 10 and 11, and Apple Silicon Mac, macOS 11 or later.</p>
 <a class="btn btn-primary btn-lg os-dl" href="https://apps.microsoft.com/detail/9P0LT7C59MH8">
 Start Free Trial →
 </a>
 <p class="final-cta-fine">One-time $49 · Yours forever · We hate subscriptions too</p>
+<p class="final-cta-fine">Not financial advice.</p>
 </div>
 
 <!-- FOOTER -->
@@ -1097,14 +1178,15 @@ Start Free Trial →
 <a href="https://www.youtube.com/@MyFreedomTracker" target="_blank" rel="noopener">YouTube</a>
 </div>
 <div class="footer-copy">© 2026 MyFreedomTracker. All rights reserved.</div>
+<div class="footer-copy" style="margin-top:6px;">Not financial advice.</div>
 </footer>
 
 <script>
 (function(){
 var isMac = /Mac/.test(navigator.platform) || /Macintosh/.test(navigator.userAgent);
 var winStore = 'https://apps.microsoft.com/detail/9P0LT7C59MH8';
-var winExe   = 'https://github.com/williammcdanieliv-art/freedom-tracker-website/releases/download/v7.9.1/FreedomTracker-7.9.1-Setup.exe';
-var macUrl   = 'https://github.com/williammcdanieliv-art/freedom-tracker-website/releases/download/v7.9.1/FreedomTracker-7.9.1-Mac.dmg';
+var winExe   = 'https://github.com/williammcdanieliv-art/freedom-tracker-website/releases/download/v7.9.4/FreedomTracker-7.9.4-Setup.exe';
+var macUrl   = 'https://github.com/williammcdanieliv-art/freedom-tracker-website/releases/download/v7.9.4/FreedomTracker-7.9.4-Mac.dmg';
 
 // Primary CTAs: Windows -> Microsoft Store (no SmartScreen warning), Mac -> notarized DMG
 var primaryUrl = isMac ? macUrl : winStore;
@@ -1113,6 +1195,8 @@ document.querySelectorAll('.os-dl').forEach(function(btn) { btn.href = primaryUr
 var storeLink = document.getElementById('hero-store-link');
 var exeLink   = document.getElementById('hero-exe-link');
 var altLink   = document.getElementById('hero-alt-link');
+var sep1 = document.getElementById('hero-sep-1');
+var sep2 = document.getElementById('hero-sep-2');
 if (exeLink) { exeLink.href = winExe; }
 
 if (isMac) {
@@ -1121,11 +1205,14 @@ var heroBtn = document.getElementById('hero-download-btn');
 if (heroBtn) { heroBtn.textContent = 'Download for Mac — Free Trial'; }
 if (storeLink) { storeLink.style.display = 'none'; }
 if (exeLink) { exeLink.style.display = 'none'; }
+if (sep1) { sep1.style.display = 'none'; }
+if (sep2) { sep2.style.display = 'none'; }
 if (altLink) { altLink.href = winStore; altLink.textContent = 'Also available for Windows (Microsoft Store)'; }
 } else {
 // Windows visitor: primary buttons already point to the Store, so hide the redundant
 // secondary Store link and keep the .exe direct-installer + macOS links.
 if (storeLink) { storeLink.style.display = 'none'; }
+if (sep1) { sep1.style.display = 'none'; }
 }
 })();
 </script>

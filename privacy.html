@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Privacy Policy — MyFreedomTracker</title>
-  <meta name="description" content="MyFreedomTracker's privacy policy. Freedom Tracker is offline-first: your portfolio data stays on your own computer. No accounts, no cloud, no tracking of your finances." />
+  <meta name="description" content="MyFreedomTracker's privacy policy. Freedom Tracker is a desktop app. Your portfolio data stays on your computer, and there is no brokerage login. This page explains price and dividend fetches, update checks, and license checks." />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
@@ -60,24 +60,28 @@
 
 <div class="wrap">
   <h1>Privacy <span>Policy</span></h1>
-  <div class="updated">Last updated: June 23, 2026</div>
+  <div class="updated">Last updated: November 19, 2026</div>
 
-  <p class="lead">The short version: <strong>Freedom Tracker is an offline desktop application, and your
-  portfolio data never leaves your computer.</strong> We don't have accounts, we don't run a cloud,
-  and we never see your holdings, income, or balances. This page explains the few limited cases where
-  any data is handled at all.</p>
+  <p class="lead">The short version: <strong>Freedom Tracker is a desktop app. Your portfolio data stays
+  on your computer, and there is no brokerage login.</strong> We don't have user accounts, and we never
+  see your holdings, share counts, income, or balances. This page explains the limited cases where any
+  data is sent or handled at all — public price and dividend lookups, update checks, and license checks.</p>
 
   <h2>1. Your portfolio data stays on your device</h2>
   <p>Everything you enter into Freedom Tracker — your holdings, transactions, dividends, budgets,
-  goals, and scenarios — is stored locally in a file on your own computer. It is never uploaded to us
-  or to any third party. There is no account to create and no login. If you uninstall the app or
-  delete that file, the data is gone; we keep no copy because we never receive one.</p>
+  goals, and scenarios — is stored locally in a file on your own computer. We do not receive a copy of
+  that file. There is no Freedom Tracker account, and there is no brokerage login. If you uninstall the
+  app or delete that file, it is gone from the app; we keep no copy because we never receive one. The
+  app does send limited information to third parties as described below, including ticker symbols for
+  market data and license information for license checks.</p>
 
   <h2>2. Market data the app fetches</h2>
   <p>To show live prices and distribution information, the app requests publicly available market data
-  from third-party providers (including Yahoo Finance and stockanalysis.com). These requests contain
-  only the ticker symbols being looked up — never your share counts, balances, or any personal
-  information. If you use the app offline, it simply skips these lookups.</p>
+  from third-party providers, including Yahoo Finance and stockanalysis.com. These requests contain the
+  ticker symbols being looked up, or the text you type into ticker search — never your share counts,
+  balances, or other portfolio details. Like any web request, they also include your device's IP
+  address, which those providers handle under their own policies. If the app cannot reach the internet,
+  it skips these lookups and can show last-saved prices.</p>
 
   <h2>3. Update checks</h2>
   <p>On launch, the app may check our public software repository (hosted on GitHub) to see whether a
@@ -93,6 +97,11 @@
   We receive only limited order information — such as your email address, country, and license key — so
   we can deliver your license and provide support. We never receive or store your full payment card
   details.</p>
+  <p>After you buy, the app also checks your license with Lemon Squeezy from time to time when you
+  activate, re-check, or deactivate a computer. Those checks send only your license key, a computer
+  activation ID, and a generic name such as "Freedom Tracker (Windows)" or "Freedom Tracker (Mac)" —
+  never your holdings, share counts, or balances. If the app cannot reach the license server, it warns
+  you and keeps working; it does not lock the app just because you have no internet.</p>
 
   <h2>5. Email and support</h2>
   <p>If you contact us at <a href="mailto:support@myfreedomtracker.com">support@myfreedomtracker.com</a>,
@@ -100,15 +109,20 @@
   to respond to and resolve your request.</p>
 
   <h2>6. This website</h2>
-  <p>This site is hosted on Cloudflare Pages. Like most websites, the hosting provider may process
+  <p>This site is hosted on Cloudflare. Like most websites, the hosting provider may process
   standard technical request logs (such as IP address and browser type) for security and reliability.
+  We use Cloudflare Web Analytics, a privacy-focused, cookie-free service, to count page visits. It does not track you across sites.
   We do not place advertising or sell any information collected through this site.</p>
+  <p>If you sign up on this site for the free Clear Picture Worksheet or other email updates, MailerLite
+  processes the information you enter in that form (at least your email address) on our behalf so we
+  can send you the worksheet and related product emails. You can unsubscribe at any time. MailerLite
+  handles that information under its own privacy policy.</p>
 
   <h2>7. What we do not do</h2>
   <ul>
     <li>We do not sell, rent, or trade your information.</li>
     <li>We do not show ads or use advertising trackers.</li>
-    <li>We do not collect your financial data — it stays on your device.</li>
+    <li>We do not collect your holdings, share counts, or balances — that portfolio data stays on your computer.</li>
     <li>We do not require an account to use the application.</li>
   </ul>
 

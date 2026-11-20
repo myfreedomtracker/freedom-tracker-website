@@ -242,6 +242,15 @@
       .page-header h1 { font-size: 1.8rem; }
       .concept-grid { grid-template-columns: 1fr; }
     }
+    /* v91c: small-screen nav fit (CSS only) */
+    @media (max-width: 480px) {
+    nav { padding: 0 4%; gap: 8px; }
+    nav .nav-logo { font-size: 1rem; }
+    nav .nav-ctas .btn-ghost { display: none; }
+    nav .nav-ctas .btn { padding: 8px 14px; font-size: 0.82rem; }
+    .footer-links { flex-wrap: wrap; row-gap: 10px; }
+    code { overflow-wrap: anywhere; }
+    }
   </style>
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
@@ -307,7 +316,7 @@
     <section class="section">
       <span class="section-anchor" id="install"></span>
       <h2><span class="icon">💿</span> 1. Installation</h2>
-      <div class="section-desc">Download once — no account, no internet connection required to run.</div>
+      <div class="section-desc">Download once — no account to create. You'll need an internet connection to activate a license and to fetch prices.</div>
 
       <h3>Windows</h3>
       <div class="steps">
@@ -342,6 +351,7 @@
       </div>
 
       <h3>Mac</h3>
+      <p><strong>Mac requirement:</strong> Apple Silicon Mac, macOS 11 or later. Intel Macs aren't supported.</p>
       <div class="steps">
         <div class="step">
           <div class="step-num">1</div>
@@ -361,14 +371,14 @@
           <div class="step-num">3</div>
           <div class="step-body">
             <strong>Open the app</strong>
-            <p>The first time, <strong>right-click → Open</strong> in Finder (instead of double-clicking). macOS may ask you to confirm opening an app from the internet — click <strong>Open</strong>. After this first launch, double-clicking works normally.</p>
+            <p>Double-click <strong>FreedomTracker</strong> in Applications. The first time, macOS asks whether you want to open an app downloaded from the internet — click <strong>Open</strong>. After that, it opens normally.</p>
           </div>
         </div>
       </div>
 
       <div class="callout callout-info">
         <span class="callout-icon">ℹ️</span> <strong>Why the security prompt?</strong>
-        <p>macOS shows a warning the first time you open any app downloaded from the internet. Freedom Tracker is signed and notarized by Apple — the prompt is a standard first-run gate, not an indication of a problem.</p>
+        <p>macOS asks this the first time you open any app downloaded from the internet. Freedom Tracker is signed and notarized by Apple, so you should see only this standard confirmation. If macOS says it can't check the app or that the app is damaged, don't work around it — email support@myfreedomtracker.com.</p>
       </div>
     </section>
 
@@ -386,7 +396,7 @@
       <p>On first launch, a sample portfolio loads so you can see what a live dividend portfolio looks like. Feel free to explore, or clear it with the <strong>🧹 Clear All</strong> button and start fresh with your own holdings.</p>
 
       <div class="callout callout-tip">
-        <span class="callout-icon">💡</span> <strong>Tip:</strong> Press <strong>F5</strong> (or Ctrl+R) at any time to refresh live prices from Yahoo Finance. The app needs internet access only for price updates — your portfolio data lives entirely on your computer.
+        <span class="callout-icon">💡</span> <strong>Tip:</strong> Press <strong>F5</strong> (or Ctrl+R) at any time to refresh live prices from Yahoo Finance. The app needs an internet connection to fetch prices and to check your license. Your portfolio data stays on your computer, and there's no brokerage login.
       </div>
     </section>
 
@@ -715,7 +725,7 @@
 
       <div class="callout callout-info">
         <span class="callout-icon">ℹ️</span> <strong>Projections are estimates, not guarantees.</strong>
-        <p>The Builder assumes a flat share price (no appreciation or NAV erosion), distributions reinvested, a constant rate, and pre-tax figures. It's a planning tool based on current and historical distribution data — actual results will vary with market conditions.</p>
+        <p>Not financial advice. The Builder shows estimated results from the inputs you enter — it is not a recommendation. It assumes a flat share price (no appreciation or NAV erosion), distributions reinvested, a constant rate, and pre-tax figures. Actual results will vary with market conditions.</p>
       </div>
     </section>
 
@@ -749,7 +759,7 @@
           <div class="step-num">2</div>
           <div class="step-body">
             <strong>Install on the new computer</strong>
-            <p>Download and install Freedom Tracker. Your license key works on any machine you own.</p>
+            <p>Download and install Freedom Tracker. One license covers up to 3 computers. Your license key works on those computers; if all 3 seats are in use, deactivate a computer you no longer use before activating a new one.</p>
           </div>
         </div>
         <div class="step">
@@ -778,7 +788,7 @@
           <div class="step-num">1</div>
           <div class="step-body">
             <strong>Purchase a license</strong>
-            <p>Go to <a href="https://myfreedomtracker.lemonsqueezy.com/checkout/buy/b5c94c88-7001-4b82-ab40-a8d8d448f067" style="color:var(--gold)">myfreedomtracker.com</a> and complete checkout. Your license key is emailed to you immediately after purchase.</p>
+            <p>Go to <a href="/buy" style="color:var(--gold)">myfreedomtracker.com</a> and complete checkout. Your license key is emailed to you immediately after purchase.</p>
           </div>
         </div>
         <div class="step">
@@ -792,7 +802,7 @@
           <div class="step-num">3</div>
           <div class="step-body">
             <strong>Enter your key and click Activate</strong>
-            <p>Paste the license key from your email. The app verifies it and unlocks immediately — no internet required after activation. Your license is a one-time purchase and never expires — it's yours for life.</p>
+            <p>Paste the license key from your email. The app verifies it and unlocks immediately. The app goes online for live prices and to check your license. Your license is a one-time purchase and never expires — it's yours for life.</p>
           </div>
         </div>
         <div class="step">
@@ -827,6 +837,7 @@
     <a href="mailto:support@myfreedomtracker.com">Contact</a>
   </div>
   <div class="footer-copy">© 2026 MyFreedomTracker. All rights reserved.</div>
+  <div class="footer-copy" style="margin-top:6px;">Not financial advice.</div>
 </footer>
 
 <script>

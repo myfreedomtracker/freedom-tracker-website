@@ -290,6 +290,15 @@
       .form-row { grid-template-columns: 1fr; }
       .contact-box { flex-direction: column; text-align: center; }
     }
+    /* v91c: small-screen nav fit (CSS only) */
+    @media (max-width: 480px) {
+    nav { padding: 0 4%; gap: 8px; }
+    nav .nav-logo { font-size: 1rem; }
+    nav .nav-ctas .btn-ghost { display: none; }
+    nav .nav-ctas .btn { padding: 8px 14px; font-size: 0.82rem; }
+    .footer-links { flex-wrap: wrap; row-gap: 10px; }
+    code { overflow-wrap: anywhere; }
+    }
   </style>
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
@@ -357,7 +366,7 @@
         Is my financial data stored online?
         <span class="faq-chevron">▼</span>
       </button>
-      <div class="faq-a">Never. Freedom Tracker is 100% local and offline. Your portfolio data lives only on your computer. We have no servers, no accounts, and no cloud sync — your data is yours alone.</div>
+      <div class="faq-a">Your portfolio data stays on your computer, and there's no brokerage login. The app fetches prices and distribution rates when you're online, and it checks your license online. We don't sync your holdings to a cloud account.</div>
     </div>
 
     <div class="faq-item">
@@ -365,7 +374,7 @@
         Does it work on Mac?
         <span class="faq-chevron">▼</span>
       </button>
-      <div class="faq-a">Yes. Freedom Tracker runs on <strong>Windows 10 &amp; 11</strong> and <strong>macOS 12 (Monterey) and later</strong>. The Mac app is signed and notarized by Apple — <a href="https://github.com/williammcdanieliv-art/freedom-tracker-website/releases/download/v7.9.1/FreedomTracker-7.9.1-Mac.dmg" style="color:var(--gold)">download the Mac DMG</a>, open it, and drag Freedom Tracker into Applications.</div>
+      <div class="faq-a">Yes. Freedom Tracker runs on <strong>Windows 10 and 11</strong>, and on <strong>Apple Silicon Mac, macOS 11 or later</strong>. Intel Macs aren't supported. The Mac app is signed and notarized by Apple — <a href="https://github.com/williammcdanieliv-art/freedom-tracker-website/releases/download/v7.9.4/FreedomTracker-7.9.4-Mac.dmg" style="color:var(--gold)">download the Mac DMG</a>, open it, and drag Freedom Tracker into Applications.</div>
     </div>
 
     <div class="faq-item">
@@ -406,6 +415,14 @@
         <span class="faq-chevron">▼</span>
       </button>
       <div class="faq-a">Because we offer a full-featured 7-day free trial, we don't offer refunds on paid licenses. Use the trial to make sure Freedom Tracker is right for you before purchasing. Questions before you buy? Email <a href="mailto:support@myfreedomtracker.com" style="color:var(--gold)">support@myfreedomtracker.com</a>.</div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        Is there a discount for military, veterans, or first responders?
+        <span class="faq-chevron">▼</span>
+      </button>
+      <div class="faq-a">Yes. Use code THANKYOU10 at checkout on myfreedomtracker.com for 10% off. The code is for military, veterans, and first responders, and it applies to website purchases only.</div>
     </div>
 
     <div class="faq-item">
@@ -536,7 +553,7 @@
         <span class="faq-chevron">▼</span>
       </button>
       <div class="faq-a">
-        Your portfolio is stored in a file called <strong>freedom_portfolio.json</strong> — entirely on your computer. Nothing is ever sent to a server.<br><br>
+        Your portfolio is stored in a file called <strong>freedom_portfolio.json</strong> on your computer. Your portfolio data stays on your computer, and there's no brokerage login. The app does not upload your holdings. It does fetch prices and check your license when you're online.<br><br>
         By default it lives in <code>C:\Users\YourName\AppData\Roaming\FreedomTracker\</code> on Windows (or the data folder you chose in the app). The easiest way to see exactly where your files live: open the <strong>Your Data</strong> screen inside Freedom Tracker (v7.5+) — it shows the full path.<br><br>
         The quickest way to create a portable backup: use <strong>📤 Export CSV</strong> from the toolbar — it saves everything (holdings, transactions, settings) to a CSV file you can store anywhere.
       </div>
@@ -561,7 +578,7 @@
         <span class="faq-chevron">▼</span>
       </button>
       <div class="faq-a">
-        Yes. One license covers all computers you personally own. To use your portfolio on both machines:<br><br>
+        Yes. One license covers up to 3 computers. To use your portfolio on both machines:<br><br>
         <strong>1.</strong> Export your portfolio on machine A using <strong>📤 Export CSV</strong>.<br>
         <strong>2.</strong> Copy the file to machine B (USB drive, email, cloud storage — any method works).<br>
         <strong>3.</strong> On machine B, use <strong>📥 Import CSV</strong> to load it.<br><br>
