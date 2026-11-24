@@ -96,12 +96,12 @@
   <div class="wrap">
     <div class="brand">MyFreedomTracker</div>
     <h1>How much could your portfolio pay you?</h1>
-    <p>Enter what your portfolio is worth, pick an income strategy, and see the monthly paycheck it could throw off. No signup — it all runs right here in your browser.</p>
+    <p>Enter what your portfolio is worth and pick an income strategy to see an estimate of what it could pay each month, at the sample rates shown on this page. No signup. The calculator runs right here in your browser.</p>
   </div>
 </header>
 
 <main class="wrap">
-  <div class="sample" id="sampleNote">⚠ Showing <b>sample rates</b>, not live market data. (Run <code>build_tickers.py</code> to load current distributions before launch.)</div>
+  <div class="sample" id="sampleNote">Showing sample distribution rates, not current market data. For illustration only.</div>
 
   <section class="panel">
     <h2>1. What's your portfolio worth?</h2>
@@ -141,13 +141,13 @@
       <button class="btn-ghost" onclick="copySummary()">📋 Copy summary</button>
       <button class="btn-ghost" onclick="resetAll()">↺ Start over</button>
     </div>
-    <div class="disc">Projections on this page are based on sample distribution rates and are <b>not guaranteed</b> — rates change and distributions can be cut. Strategy yields are an equal-weight average of the example tickers shown, for illustration only. Funds shown are examples, not recommendations. The desktop app uses live distribution rates. This tool is for tracking and modeling. <b>Not financial advice.</b></div>
+    <div class="disc">Projections on this page are based on sample distribution rates and are <b>not guaranteed</b> — rates change and distributions can be cut. Strategy yields are an equal-weight average of the example tickers shown, for illustration only. Funds shown are examples, not recommendations. The desktop app uses current dividend rates. This tool is for tracking and modeling. <b>Not financial advice.</b></div>
   </section>
 
   <!-- CTA: the Budget / Freedom Score bridge -->
   <section class="cta" id="ctaPanel">
-    <p class="lead" id="ctaLead">See how much income your portfolio could really pay.</p>
-    <p id="ctaSub">Knowing the number is step one. The real question is: <b>does it cover your life?</b> In Freedom Tracker, drop your income into the <b>Budget</b> to map it against your actual bills, and watch your <b>Freedom Score</b> climb as you close the gap. Your portfolio data stays on your computer, and there's no brokerage login.</p>
+    <p class="lead" id="ctaLead">See an estimate of what your portfolio could pay each month, at the sample rates shown on this page.</p>
+    <p id="ctaSub">In the desktop app, you can map an estimate against your bills in the Budget. Your portfolio data stays on your computer, and there's no brokerage login.</p>
     <a class="dl" href="https://myfreedomtracker.com" id="dlLink">Get Freedom Tracker — free 7-day trial</a>
     <div class="ceiling">
       <div><b>Budget</b>Map this income against your real monthly expenses.</div>
@@ -160,7 +160,7 @@
 
 <footer class="wrap">
   Playground Lite · <a href="https://myfreedomtracker.com">myfreedomtracker.com</a> ·
-  Made by Bill, a fellow income investor. Your inputs stay in your browser — nothing is sent to a server.
+  Made by Bill, a fellow income investor. The estimate is calculated in your browser, and there's no brokerage login.
 </footer>
 
 <script src="tickers.js"></script>
@@ -246,9 +246,9 @@ function render(){
     document.getElementById("rYield2").textContent= y.toFixed(2)+"%";
     document.getElementById("rTotal").textContent = fmt(state.total);
     document.getElementById("rStrat").textContent = stratLabel();
-    lead.innerHTML = `That's about <b>${fmt(monthly)}/month</b> — but does it cover your life?`;
+    lead.innerHTML = `That's an estimate of about <b>${fmt(monthly)}/month</b>, before taxes, at the sample rates shown on this page. See where you stand.`;
   } else {
-    lead.textContent = "See how much income your portfolio could really pay.";
+    lead.textContent = "See an estimate of what your portfolio could pay each month, at the sample rates shown on this page.";
   }
   syncURL();
 }
@@ -344,7 +344,11 @@ function toast(t){
 
 // ---------- init ----------
 (function init(){
-  if(FT.isSample) document.getElementById("sampleNote").style.display="block";
+  if(FT.isSample){
+    const note=document.getElementById("sampleNote");
+    if(FT.lastUpdated) note.textContent=note.textContent.trim()+" Sample rates as of "+FT.lastUpdated+".";
+    note.style.display="block";
+  }
   const sel=document.getElementById("ticker");
   Object.keys(FT.data).sort().forEach(s=>{
     const o=document.createElement("option"); o.value=s; o.textContent=`${s} — ${FT.data[s].name}`; sel.appendChild(o);
