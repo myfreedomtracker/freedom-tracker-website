@@ -79,8 +79,6 @@
   .ceiling{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:18px;text-align:left}
   .ceiling div{background:rgba(255,255,255,.08);border-radius:9px;padding:12px;font-size:13px;color:#eaf2e3}
   .ceiling b{color:#fff;display:block;margin-bottom:3px}
-  .email{display:flex;gap:10px;flex-wrap:wrap;align-items:end}
-  .email .grow{flex:1;min-width:220px}
   .disc{font-size:12px;color:var(--grey);background:#fff;border:1px dashed var(--line);border-radius:9px;padding:11px 13px;margin-top:14px}
   footer{color:var(--grey);font-size:12.5px;padding:22px 0 40px;text-align:center}
   @media(max-width:680px){
@@ -158,16 +156,6 @@
     </div>
   </section>
 
-  <section class="panel">
-    <h2>Want the free “Path to Freedom” guide?</h2>
-    <p class="note" style="margin-top:-6px">Optional. Drop your email and I'll send the free guide plus the occasional note when something genuinely useful ships. No spam, unsubscribe anytime. — Bill, founder</p>
-    <!-- TODO(Bill): set action= to your email provider's form endpoint (Buttondown/MailerLite/Beehiiv). -->
-    <form class="email" id="emailForm" onsubmit="return handleEmail(event)">
-      <div class="grow"><label for="email">Email (optional)</label><input id="email" class="pct" type="email" placeholder="you@example.com"></div>
-      <button class="btn-primary" type="submit">Send me the guide</button>
-    </form>
-    <div class="note" id="emailMsg" style="margin-top:8px;display:none;color:var(--green2)"></div>
-  </section>
 </main>
 
 <footer class="wrap">
@@ -344,13 +332,6 @@ function resetAll(){
   state={total:0,strat:null,custom:[]};
   totalEl.value=""; document.querySelectorAll(".strat").forEach(e=>e.classList.remove("sel"));
   renderCustom(); history.replaceState(null,"",location.pathname); render();
-}
-function handleEmail(e){
-  e.preventDefault();
-  const v=document.getElementById("email").value.trim();
-  const msg=document.getElementById("emailMsg"); msg.style.display="block";
-  msg.textContent = v ? "Thanks! You're on the list — guide on its way. (Hook this form to your email provider.)" : "Add an email above first 🙂";
-  return false;
 }
 let toastT;
 function toast(t){
