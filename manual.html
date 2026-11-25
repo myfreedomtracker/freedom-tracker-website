@@ -858,5 +858,25 @@
   anchors.forEach(a => observer.observe(a));
 </script>
 
+<script>
+(function(){
+  var keys=["utm_source","utm_medium","utm_campaign","utm_content"];
+  var src=new URLSearchParams(location.search);
+  var add=new URLSearchParams();
+  for(var i=0;i<keys.length;i++){
+    var v=src.get(keys[i]);
+    if(v) add.set(keys[i],v);
+  }
+  if(!add.toString()) return;
+  var links=document.querySelectorAll('a[href^="/buy"]');
+  for(var j=0;j<links.length;j++){
+    var a=links[j];
+    var u=new URL(a.getAttribute("href"), location.origin);
+    if(u.pathname.replace(/\/+$/,"")!=="/buy") continue;
+    add.forEach(function(v,k){ if(!u.searchParams.has(k)) u.searchParams.set(k,v); });
+    a.setAttribute("href", u.pathname + u.search);
+  }
+})();
+</script>
 </body>
 </html>
